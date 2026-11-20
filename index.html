@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d19">
+  <meta name="description" content="Jay Studio Pro - Official home of Vocal Studio Pro, professional vocal effects and audio processing for Android.">
+  <title>Jay Studio Pro | Vocal Studio Pro</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080d19;
+      color: #f4f7ff;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #1e2a40;
+      background: #0b1220;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand span { color: #35a7ff; }
+
+    .nav-label {
+      color: #a9bad2;
+      font-size: 13px;
+    }
+
+    .hero {
+      padding: 75px 0 65px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, #173a69 0%, #080d19 65%);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid #2868a8;
+      border-radius: 30px;
+      color: #79c4ff;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 68px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: #39a9ff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #b6c5d9;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 9px;
+      background: #1689f8;
+      color: white;
+      font-weight: bold;
+      margin: 6px;
+      transition: .2s;
+    }
+
+    .button:hover { background: #0872d6; }
+
+    .button.secondary {
+      background: #17253b;
+      border: 1px solid #345071;
+    }
+
+    .panel {
+      margin: 10px auto 0;
+      max-width: 760px;
+      padding: 25px;
+      border: 1px solid #253d5c;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #13243b, #0c1423);
+    }
+
+    .equalizer {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      gap: 7px;
+      height: 95px;
+      margin: 12px 0;
+    }
+
+    .equalizer i {
+      display: block;
+      width: 9px;
+      border-radius: 8px;
+      background: linear-gradient(#65d7ff, #1679ef);
+      box-shadow: 0 0 12px #1689f8;
+    }
+
+    .equalizer i:nth-child(1) {height:25%}
+    .equalizer i:nth-child(2) {height:45%}
+    .equalizer i:nth-child(3) {height:70%}
+    .equalizer i:nth-child(4) {height:95%}
+    .equalizer i:nth-child(5) {height:60%}
+    .equalizer i:nth-child(6) {height:82%}
+    .equalizer i:nth-child(7) {height:48%}
+    .equalizer i:nth-child(8) {height:72%}
+    .equalizer i:nth-child(9) {height:38%}
+    .equalizer i:nth-child(10) {height:88%}
+    .equalizer i:nth-child(11) {height:55%}
+    .equalizer i:nth-child(12) {height:30%}
+    .equalizer i:nth-child(13) {height:68%}
+    .equalizer i:nth-child(14) {height:42%}
+    .equalizer i:nth-child(15) {height:78%}
+
+    section { padding: 65px 0; }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: #9eb0c8;
+      max-width: 650px;
+      margin: 0 auto 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      padding: 23px;
+      border-radius: 13px;
+      background: #101b2d;
+      border: 1px solid #243550;
+    }
+
+    .card .icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #70bdff;
+    }
+
+    .card p {
+      color: #aabbd0;
+      font-size: 14px;
+    }
+
+    .download {
+      text-align: center;
+      background: linear-gradient(145deg, #102b4c, #0b1423);
+      border-top: 1px solid #24486f;
+      border-bottom: 1px solid #24486f;
+    }
+
+    .download-box {
+      max-width: 650px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #31577f;
+      border-radius: 17px;
+      background: #0c192a;
+    }
+
+    .version {
+      color: #77c4ff;
+      margin: 12px 0;
+      font-weight: bold;
+    }
+
+    .notice {
+      color: #aabbd0;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      color: #8192a9;
+      font-size: 13px;
+    }
+
+    @media(max-width:600px) {
+      .hero { padding: 55px 0; }
+      section { padding: 48px 0; }
+      .panel { padding: 15px; }
+      .section-title { font-size: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">JAY <span>STUDIO PRO</span></div>
+    <div class="nav-label">OFFICIAL WEBSITE</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="tag">ANDROID AUDIO APPLICATION</div>
+
+      <h1>VOCAL STUDIO <span>PRO</span></h1>
+
+      <p>
+        Explore your voice with professional vocal effects
+        and real-time audio processing. Built for Android
+        by Jay Studio Pro.
+      </p>
+
+      <div>
+        <a class="button" href="#download">DOWNLOAD APK</a>
+        <a class="button secondary" href="#features">EXPLORE FEATURES</a>
+      </div>
+
+      <div class="panel">
+        <div style="color:#70bdff;font-weight:bold">
+          REAL-TIME AUDIO EXPERIENCE
+        </div>
+
+        <div class="equalizer" aria-label="Decorative audio equalizer">
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+
+        <div style="color:#aabbd0;font-size:13px">
+          VOCAL EFFECTS • AUDIO DSP • VOICE PROCESSING
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title">Application Features</h2>
+
+      <p class="section-desc">
+        Powerful audio tools designed to enhance your vocal experience.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon">🎤</div>
+          <h3>Voice Ducking</h3>
+          <p>Automatically lowers external music volume when voice activity is detected.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎚️</div>
+          <h3>Audio Equalizer</h3>
+          <p>Adjust audio frequencies to shape your preferred sound.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌊</div>
+          <h3>32-Band Spectrum</h3>
+          <p>Real-time FFT spectrum analyzer for audio visualization.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Stereo VU Meter</h3>
+          <p>Monitor left and right audio levels in real time.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎧</div>
+          <h3>Vocal Effects</h3>
+          <p>Explore reverb, harmony, pitch and other vocal processing effects.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h3>Audio DSP Engine</h3>
+          <p>Integrated audio processing for your vocal effects workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download" id="download">
+    <div class="container">
+      <div class="download-box">
+        <h2 class="section-title">Download Vocal Studio Pro</h2>
+
+        <div class="version">VERSION 1.1.0</div>
+
+        <p style="color:#b6c5d9">
+          Get the latest Android application from
+          the official Jay Studio Pro release page.
+        </p>
+
+        <a class="button"
+           href="https://github.com/jaystudiopro/jaystudiopro.github.io/releases/latest">
+          DOWNLOAD APK
+        </a>
+
+        <p class="notice">
+          APK download will be available after the official release is published.
+          Android installation may require permission to install unknown apps.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="text-align:center">
+      <h2 class="section-title">About Jay Studio Pro</h2>
+      <p class="section-desc">
+        Jay Studio Pro develops audio applications and tools
+        focused on vocal effects, audio processing and creative sound experiences.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Jay Studio Pro. All rights reserved.
+    <br>
+    Official website: jaystudiopro.github.io
+  </div>
+</footer>
+
+</body>
+</html>
